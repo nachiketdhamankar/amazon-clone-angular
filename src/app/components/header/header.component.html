@@ -11,8 +11,9 @@
           <mat-icon>search</mat-icon>
         </div>
       </div>
-      <div class="header_menu_signIn" routerLink="/login">
-        <span class="header_menu_top_item">Hello, Sign In</span>
+      <div class="header_menu_signIn">
+        <span (click) = "auth.logOut()" class="header_menu_top_item" *ngIf="auth.isLoggedIn()">Hello, {{auth.getUser()}}</span>
+        <span routerLink="/login" class="header_menu_top_item" *ngIf="!auth.isLoggedIn()">Hello, Sign In</span>
         <span class="header_menu_bottom_item">Accounts & Lists</span>
       </div>
       <div class="header_menu_signIn">

@@ -37,7 +37,7 @@ export class ShoppingCartService {
 
   removeItemFromCart = (p: any) => {
     let items: object[] = this.getShoppingCartItems();
-    const index = items.findIndex(item => item.id == p.id);
+    const index = items.findIndex(item => item['id'] == p.id);
     if (index > -1) {
       items.splice(index, 1);
       return localStorage.setItem('shopping_cart', JSON.stringify(items))

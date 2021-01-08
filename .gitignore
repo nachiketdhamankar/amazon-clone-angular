@@ -4,7 +4,7 @@
 */config
 .firebaserc
 firebase.json
-*/.firebase
+.firebase/
 /dist/*
 
 # compiled output

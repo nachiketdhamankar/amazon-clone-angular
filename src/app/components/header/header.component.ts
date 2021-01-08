@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ShoppingCartService } from 'src/app/services/shopping_cart/shopping-cart.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ShoppingCartService } from 'src/app/services/shopping_cart/shopping-car
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public shopping_cart: ShoppingCartService) { }
+  constructor(public shopping_cart: ShoppingCartService, public auth: AuthService) { }
 
   ngOnInit(): void {
 
