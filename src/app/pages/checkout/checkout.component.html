@@ -1,1 +1,15 @@
-<p>checkout works!</p>
+<div class="checkout">
+    <div class="checkout_left">
+        <div class="checkout_empty" *ngIf="getShoppingCartLength() == 0">
+            <h2>Empty Shopping cart</h2>
+            <p>Please add items in the shopping cart to checkout</p>
+        </div>
+        <div class="checkout_not_empty" *ngIf="getShoppingCartLength() != 0">
+            <p><strong>Shopping Cart</strong></p>
+            <app-checkout-products [checkout_products]="items" (delete_event) = "deleteEventHandler($event)"> </app-checkout-products>
+        </div>
+    </div>
+    <div class="checkout_right">
+        <app-checkout-subtotal></app-checkout-subtotal>
+    </div>
+</div>

@@ -14,6 +14,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
+import { CheckoutProductsComponent } from './components/checkout-products/checkout-products.component';
+import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { firebaseConfig } from './config/firebase.config';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import { ProductsComponent } from './components/products/products.component';
     LoginComponent,
     CheckoutComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    CheckoutProductsComponent,
+    CheckoutSubtotalComponent
   ],
   imports: [
     MatIconModule,
@@ -32,7 +39,9 @@ import { ProductsComponent } from './components/products/products.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
